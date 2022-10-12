@@ -1,0 +1,2 @@
+class FarmerOutputDelivery < ApplicationRecord
+end

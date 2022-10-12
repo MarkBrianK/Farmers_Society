@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  farm_input_id: 1
+  date_booked: MyString
+  quantity: MyString
+
+two:
+  farm_input_id: 1
+  date_booked: MyString
+  quantity: MyString

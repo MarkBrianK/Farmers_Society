@@ -1,0 +1,2 @@
+class FarmerOutputDeliveriesController < ApplicationController
+end

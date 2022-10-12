@@ -1,0 +1,2 @@
+class FarmerInput < ApplicationRecord
+end

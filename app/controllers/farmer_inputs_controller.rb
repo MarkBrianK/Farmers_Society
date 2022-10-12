@@ -1,0 +1,2 @@
+class FarmerInputsController < ApplicationController
+end
