@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_12_091755) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
-    t.string "email"
+    t.text "email"
     t.integer "password_digest"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_12_091755) do
 
   create_table "books", force: :cascade do |t|
     t.integer "farm_input_id"
-    t.string "date_booked"
+    t.date "date_booked"
     t.string "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,13 +34,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_12_091755) do
   create_table "farmer_inputs", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "expirydate"
+    t.date "expirydate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "farmer_output_deliveries", force: :cascade do |t|
-    t.string "date"
+    t.date "date"
     t.integer "cherry_kgs_delivered"
     t.integer "farmer_id"
     t.datetime "created_at", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_12_091755) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    t.text "email"
     t.integer "password_digest"
     t.integer "farmer_id"
     t.datetime "created_at", null: false
