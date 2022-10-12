@@ -8,7 +8,7 @@
 
 
 300.times do
-  Farmer.create(name: Faker::Name.name ,  id_number: rand(100000-500000), membership_number: rand(1000..5000))
+  Farmer.create(name: Faker::Name.name ,  id_number: rand(100000-500000), membership_number: rand(1000..5000), image_url: "https://as2.ftcdn.net/v2/jpg/02/24/86/95/1000_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg")
 end
 100.times do
   FarmerOutputDelivery.create(date:Faker::Date.between(from: '2022-01-01', to: '2022-04-05'), cherry_kgs_delivered: rand(2..10000), farmer_id: rand(1..300))

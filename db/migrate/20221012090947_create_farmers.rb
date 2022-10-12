@@ -4,6 +4,7 @@ class CreateFarmers < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :id_number
       t.integer :membership_number
+      t.string  :image_url
 
       t.timestamps
     end
