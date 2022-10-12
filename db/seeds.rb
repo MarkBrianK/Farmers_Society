@@ -8,21 +8,21 @@
 
 
 300.times do
-  Farmer.create(name: ,  id_number:, membership_number:)
+  Farmer.create(name: Faker::Name.name ,  id_number: rand(100000-500000), membership_number: rand(1000..5000))
 end
-150.times do
-  FarmerInput.create( name:, description: , expirydate:)
-end
-100.times do
-  FarmerOutputDelivery.create(date:, cherry_kgs_delivered:, farmer_id:)
-end
+# 150.times do
+#   FarmerInput.create( name:, description: , expirydate:)
+# end
+# 100.times do
+#   FarmerOutputDelivery.create(date:, cherry_kgs_delivered:, farmer_id:)
+# end
 
-150.times do
-  Book.create(farm_input_id: , date_booked:,  quantity:)
-end
+# 150.times do
+#   Book.create(farm_input_id: , date_booked:,  quantity:)
+# end
 
-Admin.create(username: , email: ,password_digest:, user_id:)
+# Admin.create(username: , email: ,password_digest:, user_id:)
 
-300.times do
-  User.create(username:, email:, password_digest:, farmer_id:)
-end
+# 300.times do
+#   User.create(username:, email:, password_digest:, farmer_id:)
+# end
