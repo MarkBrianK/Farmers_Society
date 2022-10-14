@@ -5,6 +5,8 @@ class FarmerInputsController < ApplicationController
   render json: inputs
   end
   def show
+  inputs =  FarmerInput.find_by(params[:id])
+  render json: inputs
   end
 
 end
