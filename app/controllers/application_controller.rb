@@ -1,18 +1,20 @@
 class ApplicationController < ActionController::API
+  before_action :set_csrf_cookie
   include ActionController::Cookies
-  rescue_from ActiveRecord::RecordInvalid, with: :not_processable_entity
+  include ActionController::RequestForgeryProtection
 
-        before_action :authorize
+  protect_from_forgery with: :exception
 
-  private
-  def authorize
-      @current_user = User.find_by(id: session[:user_id])
-     render json: {errors: ["Not Authorized"]}, status: :unauthorized unless @current_user
+  def cookie
+      "ok"
   end
 
+  private
 
-
-  def not_processable_entity(exception)
-      render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+  def set_csrf_cookie
+     cookies["CSRF-TOKEN"] = {
+          value: form_authenticity_token,
+          domain: :all
+      }
   end
 end
