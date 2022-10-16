@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:email], password_digest: params[:password])
     session[:user_id] = user[:id]
-    render json:user
+    render json: user
   end
 
   # logging out
