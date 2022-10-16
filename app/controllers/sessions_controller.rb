@@ -3,14 +3,10 @@ class SessionsController < ApplicationController
   skip_before_action :authorize
 
   def create
-      user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:email])
 
-      if user && user.authenticate(params[:password_digest])
-          session[:user_id] = user.id
-          render json: user
-      else
-           render json: { errors: ["Invalid Data "]}, status: :unauthorized
-      end
+    session[:user_id] = user.id
+    render json: user
   end
 
   # logging out
