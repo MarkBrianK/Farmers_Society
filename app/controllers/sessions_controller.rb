@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   skip_before_action :authorize
 
   def create
-    current_user = User.find_by_id(session[:current_user_id])
+    user = User.find_by(email: params[:email], password_digest: params[:password])
+    render json:user 
   end
 
   # logging out
