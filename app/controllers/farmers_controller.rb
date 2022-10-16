@@ -1,5 +1,5 @@
 class FarmersController < ApplicationController
-  skip_before_action :authorize,
+  skip_before_action :authorize
   def index
     farmers = Farmer.all
     render json: farmers
